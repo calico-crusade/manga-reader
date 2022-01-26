@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+    --text-color: #dcddde;
+    --text-color-muted: #555;
+
+    --bg-main: #060606;
+    --bg-menu: #010101;
+
+    --accent-1: #473BF0;
+    --accent-2: #6665DD;
+
+    --dgr-color: rgb(255, 61, 61);
+    --wrn-color: orange;
+    --suc-color: rgb(0, 255, 0);
+    --def-color: #6665DD;
+
+    --brd-color: #efefefef;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

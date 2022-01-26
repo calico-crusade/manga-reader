@@ -1,0 +1,26 @@
+<section *ngIf="loading">
+    Loading...
+</section>
+
+<section *ngIf="!loading && manga">
+    <article class="manga-info">
+        <img [src]="manga.cover" />
+        <div class="details">
+            <h1>{{ manga.title }}</h1>
+            <a [href]="manga.homePage">Manga Home Page</a>
+            <p>
+                Tags: 
+                <ng-container *ngFor="let tag of manga.tags; let i = index">
+                    <span *ngIf="i !== 0">,&nbsp;</span>
+                    <span>{{ tag }}</span>
+                </ng-container>
+            </p>
+        </div>
+    </article>
+    <article class="chapter-list">
+        <h3>Chapters:</h3>
+        <div class="chapter" *ngFor="let chapter of chapters">
+            <a [routerLink]="['/manga', id, chapter.id ]">{{ chapter.title }}</a>
+        </div>
+    </article>
+</section>

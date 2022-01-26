@@ -1,0 +1,21 @@
+<div class="website">
+    <aside [ngClass]="{ 'open': menu }">
+        <header>
+            <h2>Manga Reader</h2>
+        </header>
+        <nav>
+            <section>
+                Manga
+            </section>
+        </nav>
+    </aside>
+    <main>
+        <div class="content">
+            <router-outlet></router-outlet>
+        </div>
+        <button class="floating" (click)="toggleMenu()">
+            <mat-icon *ngIf="menu">keyboard_double_arrow_left</mat-icon>
+            <mat-icon *ngIf="!menu">keyboard_double_arrow_right</mat-icon>
+        </button>
+    </main>
+</div>

@@ -1,0 +1,31 @@
+<section *ngIf="loading">
+    Loading...
+</section>
+
+<section *ngIf="!loading && manga && chapter" (keyup.arrowleft)="move(-1)"  (keyup.arrowright)="move(1)">
+    <header>
+        <button (click)="skip(-1)" matTooltip="Previous Chapter">
+            <mat-icon>skip_previous</mat-icon>
+        </button>
+        <button (click)="move(-1)" matTooltip="Previous Page">
+            <mat-icon>navigate_before</mat-icon>
+        </button>
+        <button (click)="skip(0)" matTooltip="Restart Chapter">
+            <mat-icon>restart_alt</mat-icon>
+        </button>
+
+        <h2>{{ chapter.title }} <span>({{ page + 1 }}/{{ pages.length }})</span></h2>
+
+        <button (click)="move(1)" matTooltip="Next Page">
+            <mat-icon>navigate_next</mat-icon>
+        </button>
+        <button (click)="skip(1)" matTooltip="Next Chapter">
+            <mat-icon>skip_next</mat-icon>
+        </button>
+    </header>
+    
+    <div class="image-container">
+        <img [src]="pageImage" />
+    </div>
+
+</section>
